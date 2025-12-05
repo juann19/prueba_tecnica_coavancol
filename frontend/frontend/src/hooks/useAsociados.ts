@@ -2,6 +2,7 @@ import { useEffect, useState }  from "react";
 
 export interface Asociado{
     id: String;
+    identificacion:String;
     nombre:String;
     estado_pipeline:String;
     aporte_pagado:boolean;
@@ -13,8 +14,8 @@ export const useAsociados = () => {
     const [loading, setLoading]=useState(true);
     const [error, setError]= useState<string | null>(null);
 
-useEffect(()=> {
-
+    useEffect(()=> {
+    const fetchData=async()=>{
     try{
         setLoading(true);
         const res=await fetch("https://raw.githubusercontent.com/managerrojo/COAVANCOL-Prueba-T-cnica-/refs/heads/main/IndexAsociados");
@@ -33,5 +34,6 @@ useEffect(()=> {
     };
 
     fetchData();
-}, [];
+}, []);
 return{asociados, loading, error};
+};

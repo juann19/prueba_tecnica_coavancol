@@ -40,10 +40,10 @@ export function AsociadosList(){
             </thead>
 
             <tbody>
-            {filtrados.map((as)=>(
-                <tr>
+            {filtrados.map((as, index)=>(
+                <tr key={index}>
                 <td>{as.nombre}</td>
-                <td>{as.identificación}</td>
+                <td>{as.identificacion}</td>
                 <td>{as.estado_pipeline}</td>
             </tr>
             ))}
