@@ -9,7 +9,7 @@ export function AsociadosList(){
     if(error) return <p>Error:{error}</p>;
 
     const estados=[
-        "Tosos",
+        "Todos",
         "Prospecto",
         "Expendiente en Construccion",
         "Pendiente Juridico",
